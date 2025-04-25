@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        #no {
+            background-color: red;
+            color: white;
+            border-radius: 20px;
+        }
+        #yes {
+            background-color: green;
+            color: white;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+    <div class="buttons">
+        <button id="yes" onclick="location.href='thanks.html'">Yes</button>
+        <button id="no" onclick="shrinkNo()">No</button>
+    </div>
+    
+    <script>
+        let noSize = 1;
+        let yesSize = 1;
+
+        function shrinkNo() {
+            let noButton = document.getElementById("no");
+            let yesButton = document.getElementById("yes");
+            
+            noSize -= 0.2;
+            yesSize += 0.3;
+
+            if (noSize <= 0) {
+                noButton.style.display = "none";
+                setTimeout(() => {
+                    location.href = 'thanks.html';
+                }, 500);
+            } else {
+                noButton.style.transform = `scale(${noSize})`;
+                yesButton.style.transform = `scale(${yesSize})`;
+            }
+        }
+    </script>
+</body> 
+</html>
