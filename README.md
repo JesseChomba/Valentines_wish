@@ -4,7 +4,7 @@ A simple interactive Valentine webpage with a playful twist. Users are asked "Wi
 
 ## How to Use
 
-Open `Valentine.html` in any modern web browser to experience the interaction.
+Open `index.html` in any modern web browser to experience the interaction.
 
 ## Interaction Details
 
